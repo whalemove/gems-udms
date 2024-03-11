@@ -1,0 +1,11 @@
+development:
+  lums_rws: http://dev-lums-rws.optilink.com:8232/
+  secret_key: "@PT1L!NK"
+
+test:
+  lums_rws: http://test-lums-rws.optilink.com:8232/
+  secret_key: "@pt1l!nk"
+
+production:
+  lums_rws: http://prd-lums-rws.optilink.com:8230/
+  secret_key: "@PT1L!NK"

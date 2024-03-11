@@ -1,0 +1,19 @@
+default: &default
+  host: <%= ENV["LUMS_RWS_REDIS_HOST"] || "localhost" %>
+  port: <%= ENV["LUMS_RWS_REDIS_PORT"] || 6379 %>
+  password: <%= ENV["LUMS_RWS_REDIS_PASSWORD"] %>
+  db: <%= ENV["LUMS_RWS_REDIS_DB"] || 0 %>
+  timeout: 30000
+  expire_after: 604800
+
+development:
+  <<: *default
+  namespace: <%= ENV["LUMS_RWS_REDIS_NAMESPACE"] || "pacific_lums_development" %>
+
+test:
+  <<: *default
+  namespace: <%= ENV["LUMS_RWS_REDIS_NAMESPACE"] || "pacific_lums_test" %>
+
+production:
+  <<: *default
+  namespace: <%= ENV["LUMS_RWS_REDIS_NAMESPACE"] || "pacific_lums_production" %>
