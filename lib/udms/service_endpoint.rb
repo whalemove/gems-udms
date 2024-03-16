@@ -7,7 +7,7 @@ module Udms
     def self.get_service_endpoints
       begin
         response = {'return_code'=>0, 'return_info'=>'success'}
-        response['service_endpoints'] = UDMS_REDIS_CLIENT.read('service_endpoints')
+        response['service_endpoints'] = Cache.read('service_endpoints')
         if response['service_endpoints'].blank?
           response = self.get('get_service_endpoints')
         end

@@ -10,7 +10,7 @@ module Udms
         if key.blank?
           return response
         else
-          response = UDMS_REDIS_CLIENT.read(key)
+          response = Cache.read(key)
           Log.debug "get_unified_data from cache, key: #{key}, response #{response}"
         end
       rescue Exception => e

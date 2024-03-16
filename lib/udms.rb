@@ -9,5 +9,5 @@ require "udms/unified_data"
 require "udms/redis_client"
 
 module Udms
-  UDMS_REDIS_CLIENT = init_redis_client
+  Cache = init_redis_client
 end
